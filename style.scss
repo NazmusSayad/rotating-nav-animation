@@ -42,6 +42,7 @@ main {
 
 .nav {
    position: fixed;
+   z-index: 100;
    top: 0;
    left: -100%;
    width: 100%;
@@ -74,21 +75,20 @@ main {
       top: 0;
       transform: translate(50%, -50%);
       transition: transform 1s ease-in-out;
-      
+
       padding-top: 7.5vw;
       display: flex;
       justify-content: space-around;
       align-items: center;
-      
+
       &--humburger-1,
       &--humburger-2 {
          cursor: pointer;
          padding: 0.5rem;
-         
-         img{
+
+         img {
             height: 24px;
             aspect-ratio: 1;
-
          }
       }
 
@@ -110,7 +110,7 @@ main {
       list-style: none;
 
       &--item {
-         margin: 2rem;
+         margin-bottom: 2rem;
          transform: rotate(0);
          transition: transform 1s;
 
