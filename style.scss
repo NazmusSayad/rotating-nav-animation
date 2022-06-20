@@ -1,0 +1,148 @@
+@use "base";
+
+main {
+   transform-origin: top left;
+   transform: rotate(0);
+   transition: transform 1s;
+
+   &[data-nav-open="true"] {
+      transform: rotate(-25deg);
+   }
+}
+
+.article-box {
+   .-- {
+      width: 73%;
+      margin-top: 10rem;
+   }
+}
+
+.article {
+   margin-bottom: 7rem;
+
+   &__heading-1 {
+      line-height: 1;
+   }
+
+   &__heading-2 {
+   }
+
+   &__user {
+      font-style: italic;
+   }
+
+   &__image {
+      margin-top: 2rem;
+   }
+
+   &__paragraph {
+      margin-block: 2rem;
+   }
+}
+
+.nav {
+   position: fixed;
+   top: 0;
+   left: -100%;
+   width: 100%;
+   height: 200vmax;
+   background: #222;
+   transform-origin: top right;
+   transition: transform 1s;
+
+   &[data-nav-open="true"] {
+      transform: rotate(-25deg);
+
+      .nav__button {
+         transform: translate(50%, -50%) rotate(-65deg);
+      }
+
+      .nav__list {
+         &--item {
+            transform: rotate(25deg);
+         }
+      }
+   }
+
+   &__button {
+      position: absolute;
+      background: #ff7979;
+      width: 15vw;
+      aspect-ratio: 1;
+      border-radius: 50%;
+      right: 0;
+      top: 0;
+      transform: translate(50%, -50%);
+      transition: transform 1s ease-in-out;
+      
+      padding-top: 7.5vw;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      
+      &--humburger-1,
+      &--humburger-2 {
+         cursor: pointer;
+         padding: 0.5rem;
+         
+         img{
+            height: 24px;
+            aspect-ratio: 1;
+
+         }
+      }
+
+      &--humburger-1 {
+         transform: translate(25%, -25%);
+      }
+
+      &--humburger-2 {
+         transform: translate(-25%, -25%);
+      }
+   }
+
+   &__list {
+      position: absolute;
+      top: 100vh;
+      right: 2rem;
+      transform: translateY(-100%);
+      z-index: 100;
+      list-style: none;
+
+      &--item {
+         margin: 2rem;
+         transform: rotate(0);
+         transition: transform 1s;
+
+         a {
+            position: relative;
+            color: aliceblue;
+            font-size: 1.9rem;
+            text-decoration: none;
+            padding: 0.5rem;
+
+            &::after {
+               content: "";
+               position: absolute;
+               display: block;
+               bottom: 0;
+               left: 0;
+               right: 0;
+               background: bisque;
+               height: 0.1rem;
+               width: 0;
+               transition: width 0.2s ease-in-out;
+            }
+
+            &:hover {
+               color: bisque;
+               transition: 0.2s ease-in-out;
+
+               &::after {
+                  width: 100%;
+               }
+            }
+         }
+      }
+   }
+}

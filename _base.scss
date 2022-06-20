@@ -1,0 +1,58 @@
+// Site Defaults
+*,
+*::after,
+*::before {
+   box-sizing: border-box;
+   margin: 0;
+   padding: 0;
+}
+
+html {
+   scroll-behavior: smooth;
+   font-size: 62.5%;
+   user-select: none;
+}
+
+body {
+   font-family: "Lato", sans-serif;
+   font-size: 1.6rem;
+   line-height: 1.4;
+   color: #222;
+   background: #fafafa;
+   overflow-x: hidden;
+}
+
+input,
+button,
+textarea,
+select {
+   font: inherit;
+   color: inherit;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+   display: block;
+   max-width: 100%;
+}
+
+table {
+   border-collapse: collapse;
+   border-spacing: 0;
+}
+
+.-- {
+   width: 100%;
+   max-width: 1440px;
+   margin-left: auto;
+   margin-right: auto;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap");
+
+h1 {
+   font-size: 3.2rem;
+}
